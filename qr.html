@@ -1,1 +1,83 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Флаєр</title>
 
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f5efe6;
+  text-align:center;
+  padding:20px;
+}
+
+.container {
+  max-width:500px;
+  margin:auto;
+  background:#fffaf3;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+h1 {
+  color:#8b0000;
+}
+
+p {
+  color:#2e2a26;
+  font-size:16px;
+}
+
+.qr {
+  margin:20px 0;
+}
+
+.qr img {
+  width:250px;
+  max-width:100%;
+  border-radius:10px;
+}
+
+.link {
+  margin-top:15px;
+  font-size:14px;
+  word-break:break-all;
+}
+
+a {
+  color:#1a4d2e;
+  text-decoration:none;
+  font-weight:bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>🇺🇦 Подаруй паску воїну</h1>
+
+  <p>Скануй QR код, щоб перейти на сайт та долучитися до благодійної акції</p>
+
+  <div class="qr">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://babikovan.github.io/Give-a-warrior-an-Easter-gift/" alt="QR код">
+  </div>
+
+  <p>або відкрий посилання:</p>
+
+  <div class="link">
+    <a href="https://babikovan.github.io/Give-a-warrior-an-Easter-gift/" target="_blank">
+      https://babikovan.github.io/Give-a-warrior-an-Easter-gift/
+    </a>
+  </div>
+
+</div>
+
+</body>
+</html>
