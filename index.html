@@ -21,7 +21,6 @@ header {
   background:#e8dccb;
 }
 
-/* 🔥 ГОЛОВНИЙ ЗАГОЛОВОК */
 .main-title {
   font-size:28px;
   font-weight:bold;
@@ -29,7 +28,6 @@ header {
   margin:10px 0;
 }
 
-/* 🔥 ВАЖЛИВИЙ ТЕКСТ */
 .highlight {
   font-size:18px;
   font-weight:bold;
@@ -44,9 +42,15 @@ header {
   border-radius:15px;
   max-width:500px;
   box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  animation: fadeIn 0.6s ease-in;
 }
 
-/* IMAGE */
+/* ANIMATION */
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(20px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
 .card img {
   width:100%;
   max-width:240px;
@@ -54,14 +58,13 @@ header {
   margin:10px 0;
 }
 
-/* 🔥 ДАТА */
 .date {
   font-size:20px;
   font-weight:bold;
   color:#8b0000;
 }
 
-/* 💳 БЛОК КАРТИ */
+/* CARD BLOCK */
 .card-box {
   background:#fff;
   border:2px dashed #4CAF50;
@@ -74,7 +77,6 @@ header {
   font-size:22px;
   font-weight:bold;
   letter-spacing:2px;
-  color:#000;
 }
 
 /* BUTTON */
@@ -87,6 +89,10 @@ header {
   font-size:16px;
   margin-top:10px;
   cursor:pointer;
+}
+
+.copy-btn:hover {
+  background:#45a049;
 }
 
 /* POSTER */
@@ -107,21 +113,6 @@ footer {
   background:#e8dccb;
   font-size:14px;
 }
-
-/* 📱 MOBILE */
-@media (max-width:600px){
-  .main-title {
-    font-size:24px;
-  }
-
-  .card-number {
-    font-size:20px;
-  }
-
-  body {
-    font-size:16px;
-  }
-}
 </style>
 
 </head>
@@ -130,7 +121,9 @@ footer {
 
 <header>
   <div>🇺🇦 ⚜️ 🇺🇦</div>
+
   <div class="main-title">ПОДАРУЙ ПАСКУ ВОЇНУ</div>
+
   <div class="highlight">Благодійна акція підтримки захисників України</div>
 </header>
 
@@ -156,17 +149,28 @@ footer {
 
 </div>
 
+<!-- 💥 ЕМОЦІЙНИЙ БЛОК -->
+<div class="card">
+  <h2>🙏 Разом допомагаємо нашим захисникам</h2>
+  <p>
+    Кожна паска — це підтримка, тепло і турбота для воїнів України.
+  </p>
+</div>
+
 <div class="card">
 
   <h2>💳 Донат на паску</h2>
 
   <div class="card-box">
     <div id="cardNumber" class="card-number">
-      5457 0825 1152 9237
+      5457082511529237
     </div>
   </div>
 
   <button class="copy-btn" onclick="copyCard()">Скопіювати карту</button>
+
+  <!-- НОВА КНОПКА -->
+  <button class="copy-btn" onclick="shareSite()">Поділитись</button>
 
   <p id="copied" style="color:green;"></p>
 
@@ -187,10 +191,20 @@ footer {
 
 <script>
 function copyCard(){
-  const text = document.getElementById("cardNumber").innerText.replace(/\s/g,'');
+  const text = document.getElementById("cardNumber").innerText;
   navigator.clipboard.writeText(text);
-
   document.getElementById("copied").innerText = "✅ Скопійовано!";
+}
+
+function shareSite(){
+  if(navigator.share){
+    navigator.share({
+      title: 'Подаруй паску воїну',
+      url: window.location.href
+    });
+  } else {
+    alert("Скопіюй посилання: " + window.location.href);
+  }
 }
 </script>
 
