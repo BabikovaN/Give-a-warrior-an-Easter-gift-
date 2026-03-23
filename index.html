@@ -1,1 +1,198 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ПОДАРУЙ ПАСКУ ВОЇНУ</title>
 
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f5efe6;
+  color:#2e2a26;
+  text-align:center;
+  line-height:1.6;
+}
+
+/* HEADER */
+header {
+  padding:20px;
+  background:#e8dccb;
+}
+
+/* 🔥 ГОЛОВНИЙ ЗАГОЛОВОК */
+.main-title {
+  font-size:28px;
+  font-weight:bold;
+  color:#8b0000;
+  margin:10px 0;
+}
+
+/* 🔥 ВАЖЛИВИЙ ТЕКСТ */
+.highlight {
+  font-size:18px;
+  font-weight:bold;
+  color:#1a4d2e;
+}
+
+/* CARD */
+.card {
+  background:#fffaf3;
+  margin:20px auto;
+  padding:20px;
+  border-radius:15px;
+  max-width:500px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* IMAGE */
+.card img {
+  width:100%;
+  max-width:240px;
+  border-radius:10px;
+  margin:10px 0;
+}
+
+/* 🔥 ДАТА */
+.date {
+  font-size:20px;
+  font-weight:bold;
+  color:#8b0000;
+}
+
+/* 💳 БЛОК КАРТИ */
+.card-box {
+  background:#fff;
+  border:2px dashed #4CAF50;
+  padding:15px;
+  border-radius:12px;
+  margin-top:10px;
+}
+
+.card-number {
+  font-size:22px;
+  font-weight:bold;
+  letter-spacing:2px;
+  color:#000;
+}
+
+/* BUTTON */
+.copy-btn {
+  background:#4CAF50;
+  color:white;
+  border:none;
+  padding:12px 20px;
+  border-radius:10px;
+  font-size:16px;
+  margin-top:10px;
+  cursor:pointer;
+}
+
+/* POSTER */
+.poster {
+  margin:40px auto;
+  max-width:500px;
+}
+
+.poster img {
+  width:100%;
+  border-radius:15px;
+}
+
+/* FOOTER */
+footer {
+  margin-top:40px;
+  padding:20px;
+  background:#e8dccb;
+  font-size:14px;
+}
+
+/* 📱 MOBILE */
+@media (max-width:600px){
+  .main-title {
+    font-size:24px;
+  }
+
+  .card-number {
+    font-size:20px;
+  }
+
+  body {
+    font-size:16px;
+  }
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+  <div>🇺🇦 ⚜️ 🇺🇦</div>
+  <div class="main-title">ПОДАРУЙ ПАСКУ ВОЇНУ</div>
+  <div class="highlight">Благодійна акція підтримки захисників України</div>
+</header>
+
+<div class="card">
+
+  <p>
+    Ви можете спекти, придбати або задонатити на паску та принести її до
+    <br><br>
+    <a href="https://maps.app.goo.gl/VTQeJwV6MVJBaP698" target="_blank">
+      Свято-Михайлівського гарнізонного кафедрального собору м. Черкаси
+    </a>
+  </p>
+
+  <img src="photo10.jpg" alt="Паска">
+
+  <p class="highlight">
+    які захищають Україну від російських окупантів 🇺🇦
+  </p>
+
+  <p class="date">
+    📅 з 6 по 8 квітня
+  </p>
+
+</div>
+
+<div class="card">
+
+  <h2>💳 Донат на паску</h2>
+
+  <div class="card-box">
+    <div id="cardNumber" class="card-number">
+      5457 0825 1152 9237
+    </div>
+  </div>
+
+  <button class="copy-btn" onclick="copyCard()">Скопіювати карту</button>
+
+  <p id="copied" style="color:green;"></p>
+
+  <p>
+    о. <strong>Дмитро Ярославський</strong><br>
+    тел. 067-911-07-28
+  </p>
+
+</div>
+
+<div class="poster">
+  <img src="photo11.jpg" alt="Постер">
+</div>
+
+<footer>
+  © 2026 | Розробник: <strong>Анастасія Коцюбенко</strong>
+</footer>
+
+<script>
+function copyCard(){
+  const text = document.getElementById("cardNumber").innerText.replace(/\s/g,'');
+  navigator.clipboard.writeText(text);
+
+  document.getElementById("copied").innerText = "✅ Скопійовано!";
+}
+</script>
+
+</body>
+</html>
